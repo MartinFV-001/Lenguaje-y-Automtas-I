@@ -1,0 +1,50 @@
+<h1 align="center">Fases de un Compilador</h1>
+
+<h2 align="center">Breve Resumen</h2>
+<p align="center">Un compilador traduce código fuente a código ejecutable en varias fases. Incluye análisis léxico, sintáctico, semántico, generación de código intermedio, optimización y generación de código final.</p>
+
+<h2 align="center">Mapa Conceptual (HTML)</h2>
+
+   
+# Mapa Conceptual: Fases de un Compilador
+
+```mermaid
+graph TB
+  A[Compilador] --> B[Análisis Léxico]
+  A --> C[Análisis Sintáctico]
+  A --> D[Análisis Semántico]
+  A --> E[Generación de Código Intermedio]
+  A --> F[Optimización de Código]
+  A --> G[Generación de Código Objeto]
+  
+  B --> B1[Reconocimiento de Tokens]
+  B --> B2[Manejo de Palabras Reservadas]
+  B --> B3[Detección de Errores Léxicos]
+  
+  C --> C1[Creación del Árbol de Sintaxis Abstracta]
+  C --> C2[Detección de Errores Sintácticos]
+  
+  D --> D1[Verificación de Tipos]
+  D --> D2[Resolución de Referencias]
+  D --> D3[Detección de Errores Semánticos]
+  
+  E --> E1[Generación de Código Intermedio]
+  
+  F --> F1[Análisis de Eficiencia]
+  F --> F2[Transformaciones de Código]
+  
+  G --> G1[Selección de Instrucciones]
+  G --> G2[Asignación de Registros]
+  G --> G3[Resolución de Enlaces]
+  G --> G4[Detección de Errores de Generación de Código]
+  ```
+
+<h2 align="center">Conclusiones</h2>
+<p align="center">La comprensión de las fases de un compilador es esencial para el desarrollo eficiente de software. Este mapa conceptual facilita la visualización y comprensión de las etapas cruciales en el proceso de compilación.</p>
+
+<h2 align="center">Referencias</h2>
+<p align="center">
+  1. Aho, A. V., Lam, M. S., Sethi, R., & Ullman, J. D. (2006). Compilers: Principles, Techniques, and Tools. Pearson.
+  2. Cooper, K., & Torczon, L. (2011). Engineering a Compiler. Elsevier.
+</p>
+
