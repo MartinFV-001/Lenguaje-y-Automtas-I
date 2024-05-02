@@ -1,0 +1,49 @@
+## **Investigar caso de uso real de un autómata finito cual es su aplicación e implementación del mismo**
+
+Las investigaciones exploran las aplicaciones de los autómatas finitos tanto en la vida real como en el contexto de los videojuegos.
+![Imagen](https://i.pinimg.com/564x/76/5c/39/765c3978e1532f0aca6340546a4a3be2.jpg)
+## **Aplicaciones en la Vida Real:**
+
+Los autómatas finitos son utilizados en la verificación de sistemas, reconocimiento de patrones y protocolos de comunicación. En la verificación de sistemas, se utilizan para analizar y garantizar el cumplimiento de propiedades en sistemas complejos como circuitos electrónicos. En el reconocimiento de patrones, se aplican en procesamiento de lenguaje natural para identificar palabras clave o estructuras gramaticales en texto. En protocolos de comunicación, se emplean para modelar y asegurar la correcta transmisión y procesamiento de mensajes en sistemas de comunicación.
+![Imagen](https://i.pinimg.com/originals/4d/db/56/4ddb56273bedd584412dcf5bd3094b81.gif)
+**Ejemplos en la Vida Real:**
+- Control de Semáforos: Regula el tráfico vehicular.
+- Máquinas Expendedoras: Vende productos automáticamente.
+- Control de Ascensores: Gestiona movimientos y pisos.
+- Control de Producción: Coordina procesos industriales.
+- Procesos de Negocio: Automatiza flujos de trabajo empresariales.
+![Imagen](https://i.pinimg.com/564x/85/59/3c/85593c7dc202ff50836646d40da7b199.jpg)
+## **Aplicaciones en Videojuegos:**
+
+En el diseño de videojuegos, los autómatas finitos se utilizan en la creación de inteligencia artificial, control de estados del juego y sistemas de diálogo. En la inteligencia artificial, modelan el comportamiento de personajes no jugadores. En el control de estados del juego, determinan las transiciones entre diferentes estados del juego según las acciones del jugador. En sistemas de diálogo, modelan las opciones de diálogo y las respuestas de los personajes del juego.
+![Imagen](https://i.pinimg.com/564x/4f/37/a7/4f37a74e8b501e7280c1c5fb05326ab5.jpg)
+**Ejemplo en Videojuegos:**
+
+En un juego de rol, los autómatas finitos pueden modelar el comportamiento de los personajes no jugadores, creando una experiencia de juego más inmersiva y realista para el jugador.
+
+**Lista de Videojuegos con Autómatas Finitos:**
+
+- Super Mario Bros.
+- The Legend of Zelda: Breath of the Wild
+- Grand Theft Auto V
+- Minecraft
+- Fortnite
+- Pokémon: Espada y Escudo
+- Call of Duty: Modern Warfare
+- Red Dead Redemption 2
+- The Witcher 3: Wild Hunt
+- Overwatch
+![Imagen](https://i.pinimg.com/736x/0f/f2/c8/0ff2c8f540bb1e94a703838124f48025.jpg)
+Estos videojuegos, entre muchos otros, han utilizado autómatas finitos en diversos aspectos de su diseño y jugabilidad, contribuyendo así a la experiencia del jugador.
+![Imagen](https://i.pinimg.com/564x/ff/7d/18/ff7d1811b268ff312df50f658a9d79f0.jpg)
+## Conclusión:
+
+Los autómatas finitos tienen una amplia gama de aplicaciones en la vida real, desde el control de sistemas de tráfico hasta la gestión de procesos industriales y empresariales. Su capacidad para modelar y automatizar comportamientos hacen de ellos una herramienta invaluable en numerosos campos.
+
+![Imagen](https://i.pinimg.com/564x/0c/46/2d/0c462d6cf1379a4cdf40951534434611.jpg)
+## Referencias:
+
+ - Alavi,Mariluna; Aliaga,Sofia; Murga,Monica. (2016). Máquinas de Estado Finito.  _Revista de Investigación Estudiantil Iluminate_ , 41. http://revistasbolivianas.umsa.bo/scielo.php?script=sci_arttext&pid=S2415-23232016000100005&lng=pt&nrm=iso&tlng=pt
+ - Autómatas Finitos - FasterCapital. (2024).  _Autómatas Finitos - FasterCapital_. FasterCapital. https://fastercapital.com/es/palabra-clave/aut%C3%B3matas-finitos.html
+ - Isaac. (2022, November 26).  _Máquinas de estado finito ¿Qué son? ¿Para qué sirven?_  Profesional Review; Profesional Review. https://www.profesionalreview.com/2022/11/26/maquinas-de-estado-finito-que-son-para-que-sirven/
+ - Castillo, J. (2017, March 29).  _Los robots más inolvidables de los videojuegos_. Alfa Beta Juega; Alfa Beta Juega. https://www.mundodeportivo.com/alfabeta/moviles/los-robots-mas-inolvidables-de-los-videojuegos-n-81968
