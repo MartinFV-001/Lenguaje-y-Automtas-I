@@ -46,3 +46,5 @@ El analizador léxico procesa el texto de entrada, identifica y clasifica cada t
 
 ### Conclusión
 El analizador léxico descrito aquí está diseñado para reconocer tokens en un lenguaje de programación en español. Utiliza expresiones regulares para identificar palabras clave, identificadores, números, operadores, símbolos especiales y comentarios. Este enfoque permite transformar un código fuente en una secuencia de tokens que pueden ser procesados por un analizador sintáctico y semántico para compilación o interpretación.
+### Interface Grafica o Aplicacion:
+https://martinfv-001.github.io/AL/
