@@ -223,6 +223,7 @@ Los comentarios son anotaciones en el código que no afectan la ejecución del p
 
 - **Expresión regular:** `#.*`
 
+**Interface en funcionamiento**
 <p align="center">
   <img src="img/01.png">
 </p>
