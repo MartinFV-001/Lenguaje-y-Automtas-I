@@ -1,4 +1,11 @@
-<div style="text-align: center;">
+<style>
+.center {
+  text-align: center;
+}
+</style>
+
+<div class="center">
+
 # Proyecto Analizador Léxico PyEspañol
 
 ### INGENIERÍA EN SISTEMAS COMPUTACIONALES
