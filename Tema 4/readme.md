@@ -30,14 +30,13 @@ _“El hombre alimenta el ingenio en contacto con la Ciencia”_
    - [Patrones regulares para cada tipo de token (en formato regex)](#patrones-regulares-para-cada-tipo-de-token-en-formato-regex)
 4. [Tabla de Tokens](#tabla-de-tokens)
 5. [Expresiones regulares](#expresiones-regulares)
-   - [Tabla de Tokens con sus expresiones regulares y breve](#tabla-de-tokens-con-sus-expresiones-regulares-y-breve)
+   - [Tabla de Tokens con sus expresiones regulares y breve explicación](#tabla-de-tokens-con-sus-expresiones-regulares-y-breve-explicación)
    - [Palabras Clave](#palabras-clave)
    - [Identificadores](#identificadores)
    - [Números](#números)
    - [Operadores](#operadores)
    - [Símbolos Especiales](#símbolos-especiales)
    - [Comentarios](#comentarios)
-   - [Espacios en Blanco](#espacios-en-blanco)
 6. [Manejo de Espacios en Blanco y Comentarios](#manejo-de-espacios-en-blanco-y-comentarios)
 7. [Prioridad de Coincidencia](#prioridad-de-coincidencia)
 8. [Acciones Asociadas a los Tokens](#acciones-asociadas-a-los-tokens)
@@ -48,7 +47,9 @@ _“El hombre alimenta el ingenio en contacto con la Ciencia”_
     - [Código PyScript](#código-pyscript)
     - [Código JavaScript](#código-javascript)
 11. [Conclusión](#conclusión)
-12. [Referencias](#referencias)
+12. [Interface Gráfica o Aplicación](#interface-gráfica-o-aplicación)
+13. [Repositorio en el cual se trabajó](#repositorio-en-el-cual-se-trabajó)
+14. [Referencias](#referencias)
 
 ---
 
@@ -110,7 +111,7 @@ El analizador léxico es un componente fundamental en el proceso de compilación
 | Verdadero| Palabra Clave   |
 | Falso    | Palabra Clave   |
 | Variable | Identificador   |
-| 1-9      | Numero          |
+| 1-9      | Número          |
 | +        | Operador        |
 | -        | Operador        |
 | *        | Operador        |
@@ -130,22 +131,22 @@ El analizador léxico es un componente fundamental en el proceso de compilación
 
 ## Expresiones regulares
 
-### Tabla de Tokens con sus expresiones regulares y breve:
+### Tabla de Tokens con sus expresiones regulares y breve explicación
 
 Hemos definido una serie de tokens que nuestro analizador léxico debe reconocer. Estos tokens se clasifican en diferentes categorías: palabras clave, identificadores, números, operadores, símbolos especiales y comentarios. A continuación se presenta la tabla de tokens con su tipo y expresión regular correspondiente.
 
-| Token     | Tipo            | Expresión Regular        | Explicación                                                |
-|-----------|-----------------|--------------------------|------------------------------------------------------------|
-| si        | PALABRA_CLAVE   | `\bsi\b`                 | Coincide con "si", utilizado para condicionales (equivalente a "if"). |
-| sino      | PALABRA_CLAVE   | `\bsino\b`               | Coincide con "sino", utilizado para condicionales alternativos (equivalente a "else"). |
-| mientras  | PALABRA_CLAVE   | `\bmientras\b`           | Coincide con "mientras", utilizado para bucles (equivalente a "while"). |
-| para      | PALABRA_CLAVE   | `\bpara\b`               | Coincide con "para", utilizado para bucles (equivalente a "for"). |
-| función   | PALABRA_CLAVE   | `\bfunción\b`            | Coincide con "función", utilizado para definir funciones (equivalente a "def"). |
-| retorno   | PALABRA_CLAVE   | `\bretorno\b`            | Coincide con "retorno", utilizado para devolver valores de funciones (equivalente a "return"). |
-| clase     | PALABRA_CLAVE   | `\bclase\b`              | Coincide con "clase", utilizado para definir clases (equivalente a "class"). |
-| importar  | PALABRA_CLAVE   | `\bimportar\b`           | Coincide con "importar", utilizado para importar módulos (equivalente a "import"). |
-| verdadero | PALABRA_CLAVE   | `\bverdadero\b`          | Coincide con "verdadero", valor booleano verdadero (equivalente a "true"). |
-| falso     | PALABRA_CLAVE   | `\bfalso\b`              | Coincide con "falso", valor booleano falso (equivalente a "false"). |
+| Token         | Tipo            | Expresión Regular        | Explicación                                                |
+|---------------|-----------------|--------------------------|------------------------------------------------------------|
+| si            | PALABRA_CLAVE   | `\bsi\b`                 | Coincide con "si", utilizado para condicionales (equivalente a "if"). |
+| sino          | PALABRA_CLAVE   | `\bsino\b`               | Coincide con "sino", utilizado para condicionales alternativos (equivalente a "else"). |
+| mientras      | PALABRA_CLAVE   | `\bmientras\b`           | Coincide con "mientras", utilizado para bucles (equivalente a "while"). |
+| para          | PALABRA_CLAVE   | `\bpara\b`               | Coincide con "para", utilizado para bucles (equivalente a "for"). |
+| función       | PALABRA_CLAVE   | `\bfunción\b`            | Coincide con "función", utilizado para definir funciones (equivalente a "def"). |
+| retorno       | PALABRA_CLAVE   | `\bretorno\b`            | Coincide con "retorno", utilizado para devolver valores de funciones (equivalente a "return"). |
+| clase         | PALABRA_CLAVE   | `\bclase\b`              | Coincide con "clase", utilizado para definir clases (equivalente a "class"). |
+| importar      | PALABRA_CLAVE   | `\bimportar\b`           | Coincide con "importar", utilizado para importar módulos (equivalente a "import"). |
+| verdadero     | PALABRA_CLAVE   | `\bverdadero\b`          | Coincide con "verdadero", valor booleano verdadero (equivalente a "true"). |
+| falso         | PALABRA_CLAVE   | `\bfalso\b`              | Coincide con "falso", valor booleano falso (equivalente a "false").
 | Identificador | IDENTIFICADOR | `[a-zA-Z_][a-zA-Z0-9_]*` | Coincide con nombres de variables y funciones
 
 . Deben comenzar con una letra o guion bajo. |
