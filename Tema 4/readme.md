@@ -338,41 +338,20 @@ for token in tokens:
 
 ### Código JavaScript
 
-La documentación también puede incluir ejemplos de cómo se implementaría un analizador léxico similar en JavaScript, utilizando el mismo enfoque de expresiones regulares.
+Este obtiene el texto de entrada, Llama a la función Python registrada procesarEntrada y por ultimo Muestra el resultado en el área de texto de salida
+
 
 ```javascript
-const tokenSpecification = [
-    ['PALABRA_CLAVE', /\b(si|sino|mientras|para|función|retorno|clase|importar|verdadero|falso)\b/],
-    ['IDENTIFICADOR', /[a-zA-Z_][a-zA-Z0-9_]*/],
-    ['NUMERO', /\d+(\.\d+)?/],
-    ['OPERADOR', /\+|\-|\*|\/|==|=|<|>/],
-    ['SIMBOLO', /[{}();,]/],
-    ['COMENTARIO', /#.*/],
-    ['ESPACIO_BLACO', /\s+/],
-];
-
-function analizarLexico(codigo) {
-    let tokens = [];
-    let regex = new RegExp(tokenSpecification.map(([name, regex]) => `(?<${name}>${regex.source})`).join('|'), 'g');
-    let match;
-    while (match = regex.exec(codigo)) {
-        for (let name in match.groups) {
-            if (match.groups[name] && name !== 'ESPACIO_BLACO' && name !== 'COMENTARIO') {
-                tokens.push([name, match.groups[name]]);
-            }
-        }
+<script>
+    function ejecutarScript() {
+        // Obtener el texto de entrada del área de texto
+        const inputText = document.getElementById('input-text').value;
+        // Llamar a la función Python para procesar el texto y obtener los tokens
+        const outputText = window.procesarEntrada(inputText);
+        // Actualizar el área de texto de salida con los tokens generados
+        document.getElementById('output-text').value = outputText;
     }
-    return tokens;
-}
-
-// Ejemplo de uso del analizador léxico
-let codigoFuente = `
-si x > 10:
-    imprimir("x es mayor que 10")
-`;
-
-let tokens = analizarLexico(codigoFuente);
-tokens.forEach(token => console.log(token));
+</script>
 ```
 
 ---
