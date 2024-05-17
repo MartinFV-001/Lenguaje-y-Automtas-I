@@ -4,11 +4,11 @@
 
 <h1 align="center">INGENIERÍA EN SISTEMAS COMPUTACIONALES</h1>
 
-<h2 align="center">SISTEMAS OPERATIVOS</h2>
+<h2 align="center">Proyecto Analizador Léxico PyEspañol</h2>
 
 <p align="center">
 <b>NOMBRE DE LA ASIGNATURA:</b><br>
-SISTEMAS OPERATIVOS
+Lenguaje y Automatas I
 </p>
 
 <p align="center">
