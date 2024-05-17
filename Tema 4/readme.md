@@ -3,30 +3,30 @@
 <h2 align="center">SISTEMAS OPERATIVOS</h2>
 
 <p align="center">
-**NOMBRE DE LA ASIGNATURA:**<br>
+<b>NOMBRE DE LA ASIGNATURA:</b><br>
 SISTEMAS OPERATIVOS
 </p>
 
 <p align="center">
-**INTEGRANTES DEL EQUIPO:**<br>
-- Martin Feria Vázquez, 21200594<br>
-- Ramírez Hernández Josué, 21200990<br>
-- Valdez Zuñiga Leonardo Vicente, 24200196<br>
-- Zeron López Germán Eduardo, 21200642
+<b>INTEGRANTES DEL EQUIPO:</b><br>
+ Martin Feria Vázquez - 21200594<br>
+ Ramírez Hernández Josué - 21200990<br>
+ Valdez Zuñiga Leonardo Vicente - 24200196<br>
+ Zeron López Germán Eduardo - 21200642
 </p>
 
 <p align="center">
-**PROFESOR DE LA MATERIA:**<br>
+<b>PROFESOR DE LA MATERIA:</b><br>
 Ing. Rodolfo Baumé Lazcano
 </p>
 
 <p align="center">
-**PACHUCA, HIDALGO, 14 DE MAYO DEL 2024**
+<b>PACHUCA, HIDALGO, 14 DE MAYO DEL 2024</b>
 </p>
 
 <p align="center">
-**INSTITUTO TECNOLÓGICO DE PACHUCA**<br>
-_“El hombre alimenta el ingenio en contacto con la Ciencia”_
+<b>INSTITUTO TECNOLÓGICO DE PACHUCA</b><br>
+<i>“El hombre alimenta el ingenio en contacto con la Ciencia”</i>
 </p>
 
 ---
