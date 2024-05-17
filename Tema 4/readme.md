@@ -1,3 +1,4 @@
+<div style="text-align: center;">
 # Proyecto Analizador Léxico PyEspañol
 
 ### INGENIERÍA EN SISTEMAS COMPUTACIONALES
@@ -17,7 +18,7 @@ Ing. Rodolfo Baumé Lazcano
 
 **INSTITUTO TECNOLÓGICO DE PACHUCA**  
 _“El hombre alimenta el ingenio en contacto con la Ciencia”_
-
+</div>
 ---
 
 ## Índice
