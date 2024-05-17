@@ -1,3 +1,7 @@
+<p align="center">
+  <img src="img/logos.png">
+</p>
+
 <h1 align="center">INGENIERÍA EN SISTEMAS COMPUTACIONALES</h1>
 
 <h2 align="center">SISTEMAS OPERATIVOS</h2>
@@ -68,11 +72,19 @@ Ing. Rodolfo Baumé Lazcano
 
 El propósito de este trabajo es desarrollar un analizador léxico que identifique y categorice diferentes componentes léxicos (tokens) en un lenguaje de programación en español. Este enfoque puede ser beneficioso en entornos educativos y comunidades de programación hispanohablantes. Python es elegido como base debido a su simplicidad y legibilidad, lo que facilita la implementación y comprensión del analizador.
 
+<p align="center">
+  <img src="img/proposito.png">
+</p>
+
 ---
 
 ## ¿Qué es un analizador léxico?
 
 El analizador léxico es un componente fundamental en el proceso de compilación o interpretación de un lenguaje de programación. Toma como entrada un texto y lo descompone en una secuencia de tokens basados en patrones definidos. Aquí se detallan todos los pasos y se documenta exhaustivamente cada componente.
+
+<p align="center">
+  <img src="img/quees.png">
+</p>
 
 ---
 
@@ -213,6 +225,10 @@ Los comentarios son anotaciones en el código que no afectan la ejecución del p
 
 - **Expresión regular:** `#.*`
 
+<p align="center">
+  <img src="img/01.png">
+</p>
+
 ---
 
 ## Manejo de Espacios en Blanco y Comentarios
@@ -222,11 +238,25 @@ En nuestro analizador léxico, los espacios en blanco (espacios, tabulaciones y 
 - **Expresión regular para espacios en blanco:** `\s+`
 - **Expresión regular para comentarios:** `#.*`
 
+**Codigo:**
+<p align="center">
+  <img src="img/02.png">
+</p>
+
+**Interface:**
+<p align="center">
+  <img src="img/03.png">
+</p>
+
 ---
 
 ## Prioridad de Coincidencia
 
 La prioridad de coincidencia se maneja asegurando que las expresiones regulares para tokens más específicos se prueben antes que las más generales. Por ejemplo, las palabras clave deben coincidir antes que los identificadores, ya que una palabra clave también puede coincidir con la expresión regular para un identificador.
+
+<p align="center">
+  <img src="img/04.png">
+</p>
 
 ---
 
@@ -234,11 +264,25 @@ La prioridad de coincidencia se maneja asegurando que las expresiones regulares 
 
 Las acciones asociadas a cada token incluyen su categorización y almacenamiento en una estructura adecuada, generalmente una lista o un objeto de tipo diccionario, para su posterior procesamiento por el analizador sintáctico.
 
+<p align="center">
+  <img src="img/05.png">
+</p>
+
 ---
 
 ## Manejo de errores
 
 El manejo de errores en el analizador léxico implica la detección y notificación de secuencias de caracteres que no coinciden con ningún patrón de token válido. Esto puede incluir caracteres inválidos o secuencias de caracteres que no conforman un token reconocido. Al encontrar un error, el analizador debe proporcionar un mensaje de error claro y, de ser posible, la ubicación del error en el código fuente.
+
+**Codigo:**
+<p align="center">
+  <img src="img/07.png">
+</p>
+
+**Interface:**
+<p align="center">
+  <img src="img/06.png">
+</p>
 
 ---
 
