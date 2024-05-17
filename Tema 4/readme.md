@@ -251,7 +251,7 @@ En nuestro analizador léxico, los espacios en blanco (espacios, tabulaciones y 
 
 ## Prioridad de Coincidencia
 
-La prioridad de coincidencia se maneja asegurando que las expresiones regulares para tokens más específicos se prueben antes que las más generales. Por ejemplo, las palabras clave deben coincidir antes que los identificadores, ya que una palabra clave también puede coincidir con la expresión regular para un identificador.
+Para resolver conflictos cuando una secuencia de caracteres puede corresponder a múltiples tokens, el orden de los patrones en token_patterns determina la prioridad. Los patrones definidos primero tienen prioridad sobre los posteriores.
 
 <p align="center">
   <img src="img/04.png">
