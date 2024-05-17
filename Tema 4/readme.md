@@ -1,50 +1,339 @@
-### Documentación del Analizador Léxico en Español
+# Proyecto Analizador Léxico PyEspañol
 
-Este documento describe un analizador léxico (lexer) para un lenguaje de programación en español, basado en Python. El analizador reconoce varios tipos de tokens que son esenciales para el análisis sintáctico y semántico del código.
+### INGENIERÍA EN SISTEMAS COMPUTACIONALES
+**NOMBRE DE LA ASIGNATURA:**  
+SISTEMAS OPERATIVOS
 
-#### Tabla de Tokens
+**INTEGRANTES DEL EQUIPO:**  
+- Martin Feria Vázquez, 21200594  
+- Ramírez Hernández Josué, 21200990  
+- Valdez Zuñiga Leonardo Vicente, 24200196  
+- Zeron López Germán Eduardo, 21200642  
 
-| Token       | Tipo              | Expresión Regular     |
-|-------------|-------------------|-----------------------|
-| `si`        | PALABRA_CLAVE     | `\bsi\b`              |
-| `sino`      | PALABRA_CLAVE     | `\bsino\b`            |
-| `mientras`  | PALABRA_CLAVE     | `\bmientras\b`        |
-| `para`      | PALABRA_CLAVE     | `\bpara\b`            |
-| `función`   | PALABRA_CLAVE     | `\bfunción\b`         |
-| `retorno`   | PALABRA_CLAVE     | `\bretorno\b`         |
-| `clase`     | PALABRA_CLAVE     | `\bclase\b`           |
-| `importar`  | PALABRA_CLAVE     | `\bimportar\b`        |
-| `verdadero` | PALABRA_CLAVE     | `\bverdadero\b`       |
-| `falso`     | PALABRA_CLAVE     | `\bfalso\b`           |
-| Identificador | IDENTIFICADOR   | `[a-zA-Z_][a-zA-Z0-9_]*` |
-| Número      | NUMERO            | `\d+(\.\d+)?`         |
-| Operadores  | OPERADOR          | `==|!=|<=|>=|<|>|=|\+|\-|\*|/` |
-| Símbolos especiales | SIMBOLO_ESPECIAL | `[{}();,]`           |
-| Comentario  | COMENTARIO        | `#.*`                 |
-| Espacios en blanco | None       | `\s+`                 |
+**PROFESOR DE LA MATERIA:**  
+Ing. Rodolfo Baumé Lazcano
 
-### Explicación
+**PACHUCA, HIDALGO, 14 DE MAYO DEL 2024**
 
-- **Palabras Clave**: Terminos reservados como `si`, `sino`, `mientras`, etc., se reconocen usando expresiones regulares específicas para cada palabra.
-- **Identificadores**: Nombres de variables y funciones que comienzan con una letra o guion bajo y pueden contener números.
-- **Números**: Enteros y decimales.
-- **Operadores**: Aritméticos y de comparación.
-- **Símbolos Especiales**: Paréntesis, llaves, punto y coma, etc.
-- **Comentarios**: Todo lo que sigue al símbolo `#` hasta el final de la línea.
-- **Espacios en Blanco**: Ignorados en el análisis léxico para simplificar la separación de tokens.
+**INSTITUTO TECNOLÓGICO DE PACHUCA**  
+_“El hombre alimenta el ingenio en contacto con la Ciencia”_
 
-### Funcionamineto (Prueba numero 1 en terminal)
-- **Sintaxis utilizada para el ejemplo**
+---
 
-![Sintaxis](img/01.png)
+## Índice
 
-- **Prueba en terminal**
+1. [Propósito](#propósito)
+2. [¿Qué es un analizador léxico?](#qué-es-un-analizador-léxico)
+3. [Definición de Tokens](#definición-de-tokens)
+   - [Definición del lenguaje (PyEspañol)](#definición-del-lenguaje-pyespañol)
+   - [Especificación de tokens para PyEspañol](#especificación-de-tokens-para-pyespañol)
+   - [Patrones regulares para cada tipo de token (en formato regex)](#patrones-regulares-para-cada-tipo-de-token-en-formato-regex)
+4. [Tabla de Tokens](#tabla-de-tokens)
+5. [Expresiones regulares](#expresiones-regulares)
+   - [Tabla de Tokens con sus expresiones regulares y breve](#tabla-de-tokens-con-sus-expresiones-regulares-y-breve)
+   - [Palabras Clave](#palabras-clave)
+   - [Identificadores](#identificadores)
+   - [Números](#números)
+   - [Operadores](#operadores)
+   - [Símbolos Especiales](#símbolos-especiales)
+   - [Comentarios](#comentarios)
+   - [Espacios en Blanco](#espacios-en-blanco)
+6. [Manejo de Espacios en Blanco y Comentarios](#manejo-de-espacios-en-blanco-y-comentarios)
+7. [Prioridad de Coincidencia](#prioridad-de-coincidencia)
+8. [Acciones Asociadas a los Tokens](#acciones-asociadas-a-los-tokens)
+9. [Manejo de errores](#manejo-de-errores)
+10. [Documentación del código](#documentación-del-código)
+    - [Metadatos del Documento](#metadatos-del-documento)
+    - [Estructura del Cuerpo](#estructura-del-cuerpo)
+    - [Código PyScript](#código-pyscript)
+    - [Código JavaScript](#código-javascript)
+11. [Conclusión](#conclusión)
+12. [Referencias](#referencias)
 
-![Captura en terminal](img/02.png)
+---
 
-El analizador léxico procesa el texto de entrada, identifica y clasifica cada token según las reglas definidas, y maneja errores léxicos cuando encuentra caracteres no reconocidos.
+## Propósito
 
-### Conclusión
-El analizador léxico descrito aquí está diseñado para reconocer tokens en un lenguaje de programación en español. Utiliza expresiones regulares para identificar palabras clave, identificadores, números, operadores, símbolos especiales y comentarios. Este enfoque permite transformar un código fuente en una secuencia de tokens que pueden ser procesados por un analizador sintáctico y semántico para compilación o interpretación.
+El propósito de este trabajo es desarrollar un analizador léxico que identifique y categorice diferentes componentes léxicos (tokens) en un lenguaje de programación en español. Este enfoque puede ser beneficioso en entornos educativos y comunidades de programación hispanohablantes. Python es elegido como base debido a su simplicidad y legibilidad, lo que facilita la implementación y comprensión del analizador.
+
+---
+
+## ¿Qué es un analizador léxico?
+
+El analizador léxico es un componente fundamental en el proceso de compilación o interpretación de un lenguaje de programación. Toma como entrada un texto y lo descompone en una secuencia de tokens basados en patrones definidos. Aquí se detallan todos los pasos y se documenta exhaustivamente cada componente.
+
+---
+
+## Definición de Tokens
+
+### Definición del lenguaje (PyEspañol):
+
+- **Palabras clave:** "si", "sino", "mientras", "para", "función", "retorno", "clase", "importar", "verdadero", "falso"
+- **Identificadores:** Secuencias de letras y números que comienzan con una letra (Variables).
+- **Números:** Secuencias de dígitos enteros (0-9).
+- **Operadores:** "+", "-", "*", "/", "=", "==", "<", ">"
+- **Símbolos especiales:** "(", ")", "{", "}", ";"
+- **Comentarios:** Se pueden denotar con "#" para comentarios de una sola línea.
+
+### Especificación de tokens para PyEspañol:
+
+- **Palabras clave:** `si|sino|mientras|para|función|retorno|clase|importar|verdadero|falso`
+- **Identificadores:** `[a-zA-Z][a-zA-Z0-9]*`
+- **Números:** `\d+(\.\d+)?`
+- **Operadores:** `\+|\-|\*|\/|=|==|<|>`
+- **Símbolos especiales:** `\(|\)|\{|\}|\;`
+- **Comentarios:** `#.*`
+
+### Patrones regulares para cada tipo de token (en formato regex):
+
+- **Palabras clave:** `\b(si|sino|mientras|para|función|retorno|clase|importar|verdadero|falso)\b`
+- **Identificadores:** `[a-zA-Z][a-zA-Z0-9]*`
+- **Números:** `\d+(\.\d+)?`
+- **Operadores:** `==|!=|<=|>=|<|>|=|\+|\-|\*|\/`
+- **Símbolos especiales:** `[{}();,]`
+- **Comentarios:** `#.*`
+
+---
+
+## Tabla de Tokens
+
+| TOKEN    | Tipo            |
+|----------|-----------------|
+| Si       | Palabra Clave   |
+| Sino     | Palabra Clave   |
+| Mientras | Palabra Clave   |
+| Para     | Palabra Clave   |
+| Función  | Palabra Clave   |
+| Retorno  | Palabra Clave   |
+| Clase    | Palabra Clave   |
+| Importar | Palabra Clave   |
+| Verdadero| Palabra Clave   |
+| Falso    | Palabra Clave   |
+| Variable | Identificador   |
+| 1-9      | Numero          |
+| +        | Operador        |
+| -        | Operador        |
+| *        | Operador        |
+| /        | Operador        |
+| =        | Operador        |
+| ==       | Operador        |
+| <        | Operador        |
+| >        | Operador        |
+| (        | Símbolo Especial|
+| )        | Símbolo Especial|
+| {        | Símbolo Especial|
+| }        | Símbolo Especial|
+| ;        | Símbolo Especial|
+| #        | Comentario      |
+
+---
+
+## Expresiones regulares
+
+### Tabla de Tokens con sus expresiones regulares y breve:
+
+Hemos definido una serie de tokens que nuestro analizador léxico debe reconocer. Estos tokens se clasifican en diferentes categorías: palabras clave, identificadores, números, operadores, símbolos especiales y comentarios. A continuación se presenta la tabla de tokens con su tipo y expresión regular correspondiente.
+
+| Token     | Tipo            | Expresión Regular        | Explicación                                                |
+|-----------|-----------------|--------------------------|------------------------------------------------------------|
+| si        | PALABRA_CLAVE   | `\bsi\b`                 | Coincide con "si", utilizado para condicionales (equivalente a "if"). |
+| sino      | PALABRA_CLAVE   | `\bsino\b`               | Coincide con "sino", utilizado para condicionales alternativos (equivalente a "else"). |
+| mientras  | PALABRA_CLAVE   | `\bmientras\b`           | Coincide con "mientras", utilizado para bucles (equivalente a "while"). |
+| para      | PALABRA_CLAVE   | `\bpara\b`               | Coincide con "para", utilizado para bucles (equivalente a "for"). |
+| función   | PALABRA_CLAVE   | `\bfunción\b`            | Coincide con "función", utilizado para definir funciones (equivalente a "def"). |
+| retorno   | PALABRA_CLAVE   | `\bretorno\b`            | Coincide con "retorno", utilizado para devolver valores de funciones (equivalente a "return"). |
+| clase     | PALABRA_CLAVE   | `\bclase\b`              | Coincide con "clase", utilizado para definir clases (equivalente a "class"). |
+| importar  | PALABRA_CLAVE   | `\bimportar\b`           | Coincide con "importar", utilizado para importar módulos (equivalente a "import"). |
+| verdadero | PALABRA_CLAVE   | `\bverdadero\b`          | Coincide con "verdadero", valor booleano verdadero (equivalente a "true"). |
+| falso     | PALABRA_CLAVE   | `\bfalso\b`              | Coincide con "falso", valor booleano falso (equivalente a "false"). |
+| Identificador | IDENTIFICADOR | `[a-zA-Z_][a-zA-Z0-9_]*` | Coincide con nombres de variables y funciones
+
+. Deben comenzar con una letra o guion bajo. |
+| Número    | NÚMERO          | `\d+(\.\d+)?`            | Coincide con enteros y números de punto flotante.              |
+| +         | OPERADOR        | `\+`                     | Coincide con el operador de suma.                              |
+| -         | OPERADOR        | `\-`                     | Coincide con el operador de resta.                             |
+| *         | OPERADOR        | `\*`                     | Coincide con el operador de multiplicación.                    |
+| /         | OPERADOR        | `\/`                     | Coincide con el operador de división.                          |
+| =         | OPERADOR        | `=`                      | Coincide con el operador de asignación.                        |
+| ==        | OPERADOR        | `==`                     | Coincide con el operador de igualdad.                          |
+| <         | OPERADOR        | `<`                      | Coincide con el operador menor que.                            |
+| >         | OPERADOR        | `>`                      | Coincide con el operador mayor que.                            |
+| (         | SÍMBOLO_ESPECIAL | `\(`                     | Coincide con el paréntesis izquierdo.                          |
+| )         | SÍMBOLO_ESPECIAL | `\)`                     | Coincide con el paréntesis derecho.                            |
+| {         | SÍMBOLO_ESPECIAL | `\{`                     | Coincide con la llave izquierda.                               |
+| }         | SÍMBOLO_ESPECIAL | `\}`                     | Coincide con la llave derecha.                                 |
+| ;         | SÍMBOLO_ESPECIAL | `;`                      | Coincide con el punto y coma.                                  |
+| Comentario | COMENTARIO      | `#.*`                    | Coincide con cualquier comentario de una sola línea.           |
+
+### Palabras Clave
+
+Las palabras clave son términos reservados en el lenguaje PyEspañol que tienen un significado especial y no pueden ser utilizados como identificadores.
+
+- **Expresión regular:** `\b(si|sino|mientras|para|función|retorno|clase|importar|verdadero|falso)\b`
+
+### Identificadores
+
+Los identificadores son nombres utilizados para variables, funciones, clases, etc. Deben comenzar con una letra o guion bajo y pueden contener letras, dígitos y guiones bajos.
+
+- **Expresión regular:** `[a-zA-Z_][a-zA-Z0-9_]*`
+
+### Números
+
+Los números pueden ser enteros o de punto flotante.
+
+- **Expresión regular:** `\d+(\.\d+)?`
+
+### Operadores
+
+Los operadores realizan diversas operaciones aritméticas y lógicas.
+
+- **Expresión regular:** `\+|\-|\*|\/|=|==|<|>`
+
+### Símbolos Especiales
+
+Los símbolos especiales son caracteres individuales que tienen un significado específico en el lenguaje PyEspañol.
+
+- **Expresión regular:** `[{}();,]`
+
+### Comentarios
+
+Los comentarios son anotaciones en el código que no afectan la ejecución del programa. Comienzan con el carácter `#` y continúan hasta el final de la línea.
+
+- **Expresión regular:** `#.*`
+
+---
+
+## Manejo de Espacios en Blanco y Comentarios
+
+En nuestro analizador léxico, los espacios en blanco (espacios, tabulaciones y nuevas líneas) y los comentarios son ignorados ya que no aportan información semántica al análisis léxico del código fuente. 
+
+- **Expresión regular para espacios en blanco:** `\s+`
+- **Expresión regular para comentarios:** `#.*`
+
+---
+
+## Prioridad de Coincidencia
+
+La prioridad de coincidencia se maneja asegurando que las expresiones regulares para tokens más específicos se prueben antes que las más generales. Por ejemplo, las palabras clave deben coincidir antes que los identificadores, ya que una palabra clave también puede coincidir con la expresión regular para un identificador.
+
+---
+
+## Acciones Asociadas a los Tokens
+
+Las acciones asociadas a cada token incluyen su categorización y almacenamiento en una estructura adecuada, generalmente una lista o un objeto de tipo diccionario, para su posterior procesamiento por el analizador sintáctico.
+
+---
+
+## Manejo de errores
+
+El manejo de errores en el analizador léxico implica la detección y notificación de secuencias de caracteres que no coinciden con ningún patrón de token válido. Esto puede incluir caracteres inválidos o secuencias de caracteres que no conforman un token reconocido. Al encontrar un error, el analizador debe proporcionar un mensaje de error claro y, de ser posible, la ubicación del error en el código fuente.
+
+---
+
+## Documentación del código
+
+### Metadatos del Documento
+
+El documento incluye información como el título del proyecto, el nombre de la asignatura, los nombres de los integrantes del equipo, el profesor de la materia y la fecha de presentación.
+
+### Estructura del Cuerpo
+
+El cuerpo del documento está organizado en secciones que detallan cada aspecto del proyecto, desde la definición de tokens hasta el manejo de errores y la documentación del código.
+
+### Código PyScript
+
+El código del analizador léxico se implementará en Python, utilizando expresiones regulares para identificar y categorizar tokens.
+
+```python
+import re
+
+# Definición de las expresiones regulares para los diferentes tipos de tokens
+token_specification = [
+    ('PALABRA_CLAVE', r'\b(si|sino|mientras|para|función|retorno|clase|importar|verdadero|falso)\b'),
+    ('IDENTIFICADOR', r'[a-zA-Z_][a-zA-Z0-9_]*'),
+    ('NUMERO', r'\d+(\.\d+)?'),
+    ('OPERADOR', r'\+|\-|\*|\/|==|=|<|>'),
+    ('SIMBOLO', r'[{}();,]'),
+    ('COMENTARIO', r'#.*'),
+    ('ESPACIO_BLACO', r'\s+'),
+]
+
+# Compilación de las expresiones regulares
+token_regex = '|'.join(f'(?P<{name}>{regex})' for name, regex in token_specification)
+
+def analizar_lexico(codigo):
+    tokens = []
+    for match in re.finditer(token_regex, codigo):
+        tipo = match.lastgroup
+        valor = match.group(tipo)
+        if tipo != 'ESPACIO_BLACO' and tipo != 'COMENTARIO':
+            tokens.append((tipo, valor))
+    return tokens
+
+# Ejemplo de uso del analizador léxico
+codigo_fuente = '''
+si x > 10:
+    imprimir("x es mayor que 10")
+'''
+
+tokens = analizar_lexico(codigo_fuente)
+for token in tokens:
+    print(token)
+```
+
+### Código JavaScript
+
+La documentación también puede incluir ejemplos de cómo se implementaría un analizador léxico similar en JavaScript, utilizando el mismo enfoque de expresiones regulares.
+
+```javascript
+const tokenSpecification = [
+    ['PALABRA_CLAVE', /\b(si|sino|mientras|para|función|retorno|clase|importar|verdadero|falso)\b/],
+    ['IDENTIFICADOR', /[a-zA-Z_][a-zA-Z0-9_]*/],
+    ['NUMERO', /\d+(\.\d+)?/],
+    ['OPERADOR', /\+|\-|\*|\/|==|=|<|>/],
+    ['SIMBOLO', /[{}();,]/],
+    ['COMENTARIO', /#.*/],
+    ['ESPACIO_BLACO', /\s+/],
+];
+
+function analizarLexico(codigo) {
+    let tokens = [];
+    let regex = new RegExp(tokenSpecification.map(([name, regex]) => `(?<${name}>${regex.source})`).join('|'), 'g');
+    let match;
+    while (match = regex.exec(codigo)) {
+        for (let name in match.groups) {
+            if (match.groups[name] && name !== 'ESPACIO_BLACO' && name !== 'COMENTARIO') {
+                tokens.push([name, match.groups[name]]);
+            }
+        }
+    }
+    return tokens;
+}
+
+// Ejemplo de uso del analizador léxico
+let codigoFuente = `
+si x > 10:
+    imprimir("x es mayor que 10")
+`;
+
+let tokens = analizarLexico(codigoFuente);
+tokens.forEach(token => console.log(token));
+```
+
+---
+
+## Conclusión
+
+El desarrollo de un analizador léxico para un lenguaje de programación en español es una tarea desafiante pero gratificante que puede fomentar la enseñanza y la adopción de la programación en comunidades hispanohablantes. Este proyecto demuestra cómo las expresiones regulares y los principios de los compiladores pueden aplicarse para crear una herramienta útil y educativa.
+
+---
+
+## Referencias
+
+- Documentación de Python: [https://docs.python.org/3/library/re.html](https://docs.python.org/3/library/re.html)
+- "Compiladores: Principios, Técnicas y Herramientas" de Alfred V. Aho, Monica S. Lam, Ravi Sethi y Jeffrey D. Ullman.
+
+---
+
 ### Interface Grafica o Aplicacion:
 https://martinfv-001.github.io/AL/
