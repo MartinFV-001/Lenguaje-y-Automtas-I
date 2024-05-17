@@ -1,31 +1,34 @@
-<style>
-.center {
-  text-align: center;
-}
-</style>
+<h1 align="center">INGENIERÍA EN SISTEMAS COMPUTACIONALES</h1>
 
-<div class="center">
+<h2 align="center">SISTEMAS OPERATIVOS</h2>
 
-# Proyecto Analizador Léxico PyEspañol
-
-### INGENIERÍA EN SISTEMAS COMPUTACIONALES
-**NOMBRE DE LA ASIGNATURA:**  
+<p align="center">
+**NOMBRE DE LA ASIGNATURA:**<br>
 SISTEMAS OPERATIVOS
+</p>
 
-**INTEGRANTES DEL EQUIPO:**  
-- Martin Feria Vázquez, 21200594  
-- Ramírez Hernández Josué, 21200990  
-- Valdez Zuñiga Leonardo Vicente, 24200196  
-- Zeron López Germán Eduardo, 21200642  
+<p align="center">
+**INTEGRANTES DEL EQUIPO:**<br>
+- Martin Feria Vázquez, 21200594<br>
+- Ramírez Hernández Josué, 21200990<br>
+- Valdez Zuñiga Leonardo Vicente, 24200196<br>
+- Zeron López Germán Eduardo, 21200642
+</p>
 
-**PROFESOR DE LA MATERIA:**  
+<p align="center">
+**PROFESOR DE LA MATERIA:**<br>
 Ing. Rodolfo Baumé Lazcano
+</p>
 
+<p align="center">
 **PACHUCA, HIDALGO, 14 DE MAYO DEL 2024**
+</p>
 
-**INSTITUTO TECNOLÓGICO DE PACHUCA**  
+<p align="center">
+**INSTITUTO TECNOLÓGICO DE PACHUCA**<br>
 _“El hombre alimenta el ingenio en contacto con la Ciencia”_
-</div>
+</p>
+
 ---
 
 ## Índice
