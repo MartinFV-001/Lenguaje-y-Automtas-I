@@ -170,9 +170,7 @@ Hemos definido una serie de tokens que nuestro analizador léxico debe reconocer
 | importar      | PALABRA_CLAVE   | `\bimportar\b`           | Coincide con "importar", utilizado para importar módulos (equivalente a "import"). |
 | verdadero     | PALABRA_CLAVE   | `\bverdadero\b`          | Coincide con "verdadero", valor booleano verdadero (equivalente a "true"). |
 | falso         | PALABRA_CLAVE   | `\bfalso\b`              | Coincide con "falso", valor booleano falso (equivalente a "false").
-| Identificador | IDENTIFICADOR | `[a-zA-Z_][a-zA-Z0-9_]*` | Coincide con nombres de variables y funciones
-
-. Deben comenzar con una letra o guion bajo. |
+| Identificador | IDENTIFICADOR | `[a-zA-Z_][a-zA-Z0-9_]*` | Coincide con nombres de variables y funciones. Deben comenzar con una letra o guion bajo. |
 | Número    | NÚMERO          | `\d+(\.\d+)?`            | Coincide con enteros y números de punto flotante.              |
 | +         | OPERADOR        | `\+`                     | Coincide con el operador de suma.                              |
 | -         | OPERADOR        | `\-`                     | Coincide con el operador de resta.                             |
