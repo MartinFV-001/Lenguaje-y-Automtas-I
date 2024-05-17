@@ -15,6 +15,7 @@ Este repositorio contiene evidencias del trabajo realizado tanto en clase como d
 1. **[Historia y evolución de La Teoría de Autómatas y Lenguajes Formales](https://github.com/MartinFV-001/Lenguaje-y-Automtas-I/blob/6482fe373cb93a5941c63b3ee36acf2d6086e6ce/Tema%201/1.1.%20Historia%20y%20evoluci%C3%B3n%20de%20La%20Teor%C3%ADa%20de%20Aut%C3%B3matas%20y%20Lenguajes%20Formales.md)**
 
 2. **[1.2 Fases de un compilador](https://github.com/MartinFV-001/Lenguaje-y-Automtas-I/blob/76c3b467522405b1095447d88b5fce0117c48749/Tema%201/1.2.%20Fases%20de%20un%20compilad.md)**
+3. **[2.3 Password Fuerte](https://github.com/MartinFV-001/Lenguaje-y-Automtas-I/blob/33b48db78db581101faa77374b1ca184b150f04e/Tema%202/2.3%20Password_Fuerte.md)
 
 ## Experiencias y Reflexiones
 
