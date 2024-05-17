@@ -328,12 +328,23 @@ El desarrollo de un analizador léxico para un lenguaje de programación en espa
 
 ---
 
-## Referencias
+### Interface Grafica o Aplicacion:
+https://martinfv-001.github.io/AL/
 
-- Documentación de Python: [https://docs.python.org/3/library/re.html](https://docs.python.org/3/library/re.html)
-- "Compiladores: Principios, Técnicas y Herramientas" de Alfred V. Aho, Monica S. Lam, Ravi Sethi y Jeffrey D. Ullman.
+--- 
+
+### Repositorio en el cual se trabajo:
+https://github.com/MartinFV-001/AL
 
 ---
 
-### Interface Grafica o Aplicacion:
-https://martinfv-001.github.io/AL/
+## Referencias
+
+- Tutor de programación. (2014, February 20). Analizador Léxico. Blogspot.com; Blogger. https://acodigo.blogspot.com/2014/02/analizador-lexico.html (Referencia)
+- Analizador Léxico: Implementación en Java. (2013, July 23). Learnercys; learnercys. https://learnercys.wordpress.com/2013/07/23/analizador-lexico-implementacion-en-java/ (Referencia)
+- Anaconda Inc. (2022). Pyscript.net. Pyscript.net. https://pyscript.net/ (Una plataforma para correr archivos Pyrhon en el navegador)
+- 1483 Buttons: CSS & Tailwind. (2023). Uiverse.io. https://uiverse.io/buttons?page=2 (Diseño de boton)
+- uiGradients - Beautiful colored gradients. (2024). UiGradients. https://uigradients.com/#BlueRaspberry (Diseño de los fondos)
+
+
+
