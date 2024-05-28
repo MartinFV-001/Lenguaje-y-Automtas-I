@@ -207,6 +207,7 @@ Ing. Rodolfo Baumé Lazcano
 <h2 style="text-align: center;" id="repositorio-en-el-cual-se-trabajó">Repositorio en el cual se trabajó</h2>
 <p>El código fuente y la documentación del proyecto están disponibles en un repositorio en línea, accesible para todos los interesados en estudiar o contribuir al desarrollo del analizador léxico.</p>
 <p style="text-align: center;"><strong>Repositorio:</strong> <a href="https://github.com/MartinFV-001/AnalizadorSintacticoLexico">https://github.com/MartinFV-001/AnalizadorSintacticoLexico</a></p>
+<p style="text-align: center;"><strong>Web:</strong> <a href="https://martinfv-001.github.io/AnalizadorSintacticoLexico/">https://martinfv-001.github.io/AnalizadorSintacticoLexico/</a></p>
 
 ---
 
