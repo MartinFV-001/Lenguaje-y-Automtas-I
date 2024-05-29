@@ -35,21 +35,21 @@ Ing. Rodolfo Baumé Lazcano
 
 ---
 
-
 ## Índice
 1. [Propósito](#propósito)
-2. [¿Qué es un analizador sintactico?](#qué-es-un-analizador-sintactico)
-3. [Definición de Tokens](#definición-de-tokens)
-4. [Tabla de Tokens](#tabla-de-tokens)
-5. [Expresiones regulares](#expresiones-regulares)
-6. [Manejo de Espacios en Blanco y Comentarios](#manejo-de-espacios-en-blanco-y-comentarios)
-7. [Prioridad de Coincidencia](#prioridad-de-coincidencia)
-8. [Acciones Asociadas a los Tokens](#acciones-asociadas-a-los-tokens)
-9. [Manejo de errores](#manejo-de-errores)
-10. [Conclusión](#conclusión)
-11. [Interface Gráfica o Aplicación](#interface-gráfica-o-aplicación)
-12. [Repositorio en el cual se trabajó](#repositorio-en-el-cual-se-trabajó)
-13. [Referencias](#referencias)
+2. [¿Qué es un analizador sintáctico?](#qué-es-un-analizador-sintactico)
+3. [Descripción Detallada de la Gramática](#descripción-detallada-de-la-gramática)
+4. [Definición de Tokens](#definición-de-tokens)
+5. [Tabla de Tokens](#tabla-de-tokens)
+6. [Expresiones regulares](#expresiones-regulares)
+7. [Manejo de Espacios en Blanco y Comentarios](#manejo-de-espacios-en-blanco-y-comentarios)
+8. [Prioridad de Coincidencia](#prioridad-de-coincidencia)
+9. [Acciones Asociadas a los Tokens](#acciones-asociadas-a-los-tokens)
+10. [Manejo de errores](#manejo-de-errores)
+11. [Conclusión](#conclusión)
+12. [Interface Gráfica o Aplicación](#interface-gráfica-o-aplicación)
+13. [Repositorio en el cual se trabajó](#repositorio-en-el-cual-se-trabajó)
+14. [Referencias](#referencias)
 
 ---
 
@@ -62,12 +62,108 @@ Ing. Rodolfo Baumé Lazcano
 
 ---
 
-<h2 style="text-align: center;" id="qué-es-un-analizador-sintactico">¿Qué es un analizador sintactico?</h2>
+<h2 style="text-align: center;" id="qué-es-un-analizador-sintactico">¿Qué es un analizador sintáctico?</h2>
 <p>Un analizador sintáctico o parser (viene del inglés: parse - analizar una cadena o texto en componentes sintácticos lógicos) es un programa que normalmente es parte de un compilador. El compilador se asegura de que el código se traduce correctamente a un lenguaje ejecutable.</p>
 
 <div align="center">
-    <img src="img/quees.png" alt="¿Qué es un analizador sintactico?">
+    <img src="img/quees.png" alt="¿Qué es un analizador sintáctico?">
 </div>
+
+---
+
+<h2 style="text-align: center;" id="descripción-detallada-de-la-gramática">Descripción Detallada de la Gramática</h2>
+
+<h3 style="text-align: center;">Gramática del Lenguaje PyEspañol</h3>
+<p>El lenguaje PyEspañol es un lenguaje de programación diseñado para ser similar a Python pero adaptado al idioma español. A continuación se provee una descripción clara y completa de la gramática del lenguaje, especificando todas las producciones y reglas necesarias para la correcta implementación del analizador sintáctico.</p>
+
+<h3 style="text-align: center;">Definición de la Gramática</h3>
+<p>La gramática de PyEspañol se define utilizando notación BNF (Backus-Naur Form), que es comúnmente empleada para especificar la sintaxis de los lenguajes de programación. Esta gramática define las reglas que describen cómo se pueden construir las sentencias y expresiones válidas en PyEspañol.</p>
+
+<h3 style="text-align: center;">Producciones y Reglas</h3>
+
+<h4 style="text-align: center;">Programa</h4>
+<p>Un programa en PyEspañol consiste en una secuencia de declaraciones.</p>
+<pre><code>&lt;programa&gt; ::= &lt;declaracion&gt;*</code></pre>
+
+<h4 style="text-align: center;">Declaraciones</h4>
+<p>Las declaraciones pueden ser declaraciones de control, declaraciones de función, declaraciones de clase, o declaraciones simples como asignaciones y expresiones.</p>
+<pre><code>&lt;declaracion&gt; ::= &lt;declaracion_control&gt;
+                | &lt;declaracion_funcion&gt;
+                | &lt;declaracion_clase&gt;
+                | &lt;declaracion_simple&gt;</code></pre>
+
+<h4 style="text-align: center;">Declaraciones de Control</h4>
+<p>Las declaraciones de control incluyen estructuras de decisión (<code>si</code>, <code>sino</code>) y bucles (<code>mientras</code>, <code>para</code>).</p>
+<pre><code>&lt;declaracion_control&gt; ::= &lt;declaracion_si&gt;
+                        | &lt;declaracion_mientras&gt;
+                        | &lt;declaracion_para&gt;
+
+&lt;declaracion_si&gt; ::= "si" &lt;expresion&gt; "{" &lt;declaracion&gt;* "}" &lt;declaracion_sino&gt;?
+&lt;declaracion_sino&gt; ::= "sino" "{" &lt;declaracion&gt;* "}"
+
+&lt;declaracion_mientras&gt; ::= "mientras" &lt;expresion&gt; "{" &lt;declaracion&gt;* "}"
+
+&lt;declaracion_para&gt; ::= "para" &lt;identificador&gt; "en" &lt;expresion&gt; "{" &lt;declaracion&gt;* "}"</code></pre>
+
+<h4 style="text-align: center;">Declaraciones de Función</h4>
+<p>Las funciones se declaran utilizando la palabra clave <code>función</code>.</p>
+<pre><code>&lt;declaracion_funcion&gt; ::= "función" &lt;identificador&gt; "(" &lt;parametros&gt;? ")" "{" &lt;declaracion&gt;* "retorno"? &lt;expresion&gt;? "}"
+
+&lt;parametros&gt; ::= &lt;identificador&gt; ("," &lt;identificador&gt;)*</code></pre>
+
+<h4 style="text-align: center;">Declaraciones de Clase</h4>
+<p>Las clases se declaran utilizando la palabra clave <code>clase</code>.</p>
+<pre><code>&lt;declaracion_clase&gt; ::= "clase" &lt;identificador&gt; "{" &lt;declaracion&gt;* "}"</code></pre>
+
+<h4 style="text-align: center;">Declaraciones Simples</h4>
+<p>Las declaraciones simples incluyen asignaciones y expresiones.</p>
+<pre><code>&lt;declaracion_simple&gt; ::= &lt;asignacion&gt;
+                       | &lt;expresion&gt;
+
+&lt;asignacion&gt; ::= &lt;identificador&gt; "=" &lt;expresion&gt;</code></pre>
+
+<h4 style="text-align: center;">Expresiones</h4>
+<p>Las expresiones pueden ser operaciones aritméticas, lógicas, llamadas a función, o simples identificadores y literales.</p>
+<pre><code>&lt;expresion&gt; ::= &lt;expresion_logica&gt;
+
+&lt;expresion_logica&gt; ::= &lt;expresion_igualdad&gt;
+                     | &lt;expresion_logica&gt; ("y" | "o") &lt;expresion_igualdad&gt;
+
+&lt;expresion_igualdad&gt; ::= &lt;expresion_relacional&gt;
+                       | &lt;expresion_igualdad&gt; ("==" | "!=") &lt;expresion_relacional&gt;
+
+&lt;expresion_relacional&gt; ::= &lt;expresion_aditiva&gt;
+                         | &lt;expresion_relacional&gt; ("&lt;" | "&gt;" | "&lt;=" | "&gt;=") &lt;expresion_aditiva&gt;
+
+&lt;expresion_aditiva&gt; ::= &lt;expresion_multiplicativa&gt;
+                      | &lt;expresion_aditiva&gt; ("+" | "-") &lt;expresion_multiplicativa&gt;
+
+&lt;expresion_multiplicativa&gt; ::= &lt;expresion_unaria&gt;
+                             | &lt;expres
+
+ion_multiplicativa&gt; ("*" | "/") &lt;expresion_unaria&gt;
+
+&lt;expresion_unaria&gt; ::= ("-" | "!") &lt;expresion_unaria&gt;
+                     | &lt;llamada_funcion&gt;
+                     | &lt;literal&gt;
+                     | &lt;identificador&gt;
+
+&lt;llamada_funcion&gt; ::= &lt;identificador&gt; "(" &lt;argumentos&gt;? ")"
+
+&lt;argumentos&gt; ::= &lt;expresion&gt; ("," &lt;expresion&gt;)*
+
+&lt;literal&gt; ::= &lt;numero&gt;
+               | &lt;cadena&gt;
+               | "verdadero"
+               | "falso"</code></pre>
+
+<h4 style="text-align: center;">Identificadores y Literales</h4>
+<p>Los identificadores son secuencias de letras y números que comienzan con una letra. Los literales incluyen números, cadenas y valores booleanos.</p>
+<pre><code>&lt;identificador&gt; ::= [a-zA-Z][a-zA-Z0-9]*
+
+&lt;numero&gt; ::= \d+(\.\d+)?
+
+&lt;cadena&gt; ::= "([^"\\]*(\\.[^"\\]*)*)"</code></pre>
 
 ---
 
@@ -155,11 +251,12 @@ Ing. Rodolfo Baumé Lazcano
 
 <h2 style="text-align: center;" id="manejo-de-espacios-en-blanco-y-comentarios">Manejo de Espacios en Blanco y Comentarios</h2>
   
-</p>Los comentarios en el código fuente se manejan mediante la expresión regular r'#.*'. Estos son ignorados completamente por el analizador léxico, ya que están asociados a None.</p>
+<p>Los comentarios en el código fuente se manejan mediante la expresión regular r'#.*'. Estos son ignorados completamente por el analizador léxico, ya que están asociados a None.</p>
 
 <div align="center">
     <img src="img/02.png" alt="Expresiones Regulares">
 </div>
+
 ---
 
 <h2 style="text-align: center;" id="prioridad-de-coincidencia">Prioridad de Coincidencia</h2>
@@ -168,6 +265,7 @@ Ing. Rodolfo Baumé Lazcano
 <div align="center">
     <img src="img/03.png" alt="Expresiones Regulares">
 </div>
+
 ---
 
 <h2 style="text-align: center;" id="acciones-asociadas-a-los-tokens">Acciones Asociadas a los Tokens</h2>
@@ -176,6 +274,7 @@ Ing. Rodolfo Baumé Lazcano
 <div align="center">
     <img src="img/04.png" alt="Expresiones Regulares">
 </div>
+
 ---
 
 <h2 style="text-align: center;" id="manejo-de-errores">Manejo de errores</h2>
@@ -184,10 +283,13 @@ Ing. Rodolfo Baumé Lazcano
 <div align="center">
     <img src="img/05.png" alt="Expresiones Regulares">
 </div>
+
 ---
 
 <h2 style="text-align: center;" id="conclusión">Conclusión</h2>
-<p>El analizador sintáctico es un componente indispensable en el proceso de compilación que aporta estructura y coherencia al análisis del código fuente. Su capacidad para verificar la corrección sintáctica, facilitar el análisis semántico, y proporcionar una base para la optimización y generación de código, lo convierte en un pilar fundamental para la construcción de compiladores eficientes y robustos. A través de un análisis sintáctico riguroso, los compiladores pueden ofrecer herramientas más poderosas y amigables para los desarrolladores, contribuyendo significativamente a la calidad y eficiencia del software producido.</p>
+<p>El analizador sintáctico es un componente indispensable en el proceso de compilación que aporta estructura y coherencia al análisis del código fuente. Su capacidad para verificar la corrección sintáctica, facilitar el análisis semánt
+
+ico, y proporcionar una base para la optimización y generación de código, lo convierte en un pilar fundamental para la construcción de compiladores eficientes y robustos. A través de un análisis sintáctico riguroso, los compiladores pueden ofrecer herramientas más poderosas y amigables para los desarrolladores, contribuyendo significativamente a la calidad y eficiencia del software producido.</p>
 
 <div align="center">
     <img src="img/con.jpg" alt="Conclusión">
@@ -216,5 +318,4 @@ Ing. Rodolfo Baumé Lazcano
     <li>Aho, A. V., Lam, M. S., Sethi, R., & Ullman, J. D. (2006). Compilers: Principles, Techniques, and Tools (2nd ed.). Pearson.</li>
     <li>Analizador sintáctico de oraciones. (2023). Sintaxis.org. <a href="Https://sintaxis.org/analizador/‌">Https://sintaxis.org/analizador/</a></li>
     <li>Python Software Foundation. (2023). Python Language Reference, version 3.10.<a href="https://docs.python.org/3.10/reference/">https://docs.python.org/3.10/reference/</a></li>
-  
 </ol>
