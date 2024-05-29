@@ -1,5 +1,3 @@
-He incorporado el tema solicitado al índice del documento. Aquí tienes la versión actualizada del documento:
-
 # Lenguaje y Autómatas I
 
 Este repositorio contiene evidencias del trabajo realizado tanto en clase como de investigaciones relacionadas con la materia de Lenguaje y Autómatas I.
