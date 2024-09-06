@@ -40,11 +40,9 @@ Ing. Rodolfo Baumé Lazcano
 1. [Propósito](#propósito)
 2. [¿Qué es un analizador léxico?](#qué-es-un-analizador-léxico)
 3. [Definición de Tokens](#definición-de-tokens)
-   - [Definición del lenguaje (PyEspañol)](#definición-del-lenguaje-pyespañol)
-   - [Especificación de tokens para PyEspañol](#especificación-de-tokens-para-pyespañol)
-   - [Patrones regulares para cada tipo de token (en formato regex)](#patrones-regulares-para-cada-tipo-de-token-en-formato-regex)
-4. [Tabla de Tokens](#tabla-de-tokens)
-5. [Expresiones regulares](#expresiones-regulares)
+4. [Cronograma de Actividades](#cronograma-de-actividades)
+5. [Tabla de Tokens](#tabla-de-tokens)
+6. [Expresiones regulares](#expresiones-regulares)
    - [Tabla de Tokens con sus expresiones regulares y breve explicación](#tabla-de-tokens-con-sus-expresiones-regulares-y-breve-explicación)
    - [Palabras Clave](#palabras-clave)
    - [Identificadores](#identificadores)
@@ -52,19 +50,19 @@ Ing. Rodolfo Baumé Lazcano
    - [Operadores](#operadores)
    - [Símbolos Especiales](#símbolos-especiales)
    - [Comentarios](#comentarios)
-6. [Manejo de Espacios en Blanco y Comentarios](#manejo-de-espacios-en-blanco-y-comentarios)
-7. [Prioridad de Coincidencia](#prioridad-de-coincidencia)
-8. [Acciones Asociadas a los Tokens](#acciones-asociadas-a-los-tokens)
-9. [Manejo de errores](#manejo-de-errores)
-10. [Documentación del código](#documentación-del-código)
+7. [Manejo de Espacios en Blanco y Comentarios](#manejo-de-espacios-en-blanco-y-comentarios)
+8. [Prioridad de Coincidencia](#prioridad-de-coincidencia)
+9. [Acciones Asociadas a los Tokens](#acciones-asociadas-a-los-tokens)
+10. [Manejo de errores](#manejo-de-errores)
+11. [Documentación del código](#documentación-del-código)
     - [Metadatos del Documento](#metadatos-del-documento)
     - [Estructura del Cuerpo](#estructura-del-cuerpo)
     - [Código PyScript](#código-pyscript)
     - [Código JavaScript](#código-javascript)
-11. [Conclusión](#conclusión)
-12. [Interface Gráfica o Aplicación](#interface-gráfica-o-aplicación)
-13. [Repositorio en el cual se trabajó](#repositorio-en-el-cual-se-trabajó)
-14. [Referencias](#referencias)
+12. [Conclusión](#conclusión)
+13. [Interface Gráfica o Aplicación](#interface-gráfica-o-aplicación)
+14. [Repositorio en el cual se trabajó](#repositorio-en-el-cual-se-trabajó)
+15. [Referencias](#referencias)
 
 ---
 
@@ -87,7 +85,18 @@ El analizador léxico es un componente fundamental en el proceso de compilación
 </p>
 
 ---
+## Cronograma de actividades:
 
+| **Semana** | **Fase**          | **Tareas**                                                                 | **Responsables**                         |
+|------------|-------------------|---------------------------------------------------------------------------|------------------------------------------|
+| 1          | Iniciación         | Definir objetivos, reunir al equipo, decidir tecnologías (Python), y establecer el alcance | Todos los miembros del equipo             |
+| 2          | Planificación      | Definir tokens, establecer reglas del lenguaje, asignar roles, y crear cronograma | Martin (líder), Josué, Germán             |
+| 3          | Ejecución          | Programar el analizador léxico, pruebas iniciales, y depuración de errores | Leonardo, Josué                           |
+| 4          | Monitoreo y Control | Revisar el progreso, realizar pruebas de funcionalidad, y ajustar según sea necesario | Todos los miembros del equipo             |
+| 5          | Cierre             | Realizar pruebas finales, completar la documentación, preparar la presentación final | Todos los miembros del equipo             |
+
+
+---
 ## Definición de Tokens
 
 ### Definición del lenguaje (PyEspañol):
